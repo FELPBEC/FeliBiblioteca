@@ -1,21 +1,15 @@
 package MODEL;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Loan {
-   private int id;
    private Book book;
    private LocalDateTime loanTime;
-   public Loan(int id, Book book) {
-      this.id = id;
+   public Loan( Book book) {
       this.book = book;
       this.loanTime=LocalDateTime.now();
-   }
-   public int getId() {
-      return id;
-   }
-   public void setId(int id) {
-      this.id = id;
+      
    }
    public Book getBook() {
       return book;
@@ -29,6 +23,12 @@ public class Loan {
    public void setLoanTime(LocalDateTime loanTime) {
       this.loanTime = loanTime;
    } 
-   
+   public String showLoanInfo(){
+      String info = "";
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd 'de' MMMM yyyy HH:mm");
+      info="Nombre del libro: \n"+getBook().getTitle()+"\nAutor:"+getBook().getAuthor()+"\nFecha de prestamo:"+loanTime.format(formatter)+"\nFecha de devolción: "+loanTime.plusDays(8).format(formatter);
+      info+="\n-------------------------------------------------------------------------";
+      return info;
+   }
    
 }

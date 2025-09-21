@@ -1,12 +1,15 @@
 package MODEL;
 
+import java.util.ArrayList;
+
 public class User {
     private int id;
     private String name;
-    private Loan userLoan;
+    private ArrayList<Loan> userLoan;
     public User(int id, String name) {
         this.id = id;
         this.name = name;
+        this.userLoan=new ArrayList<>();
     }
     public int getId() {
         return id;
@@ -20,11 +23,14 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public Loan getUserLoan() {
+    public ArrayList<Loan> getUserLoan() {
         return userLoan;
     }
-    public void setUserLoan(Loan userLoan) {
+    public void setUserLoan(ArrayList<Loan> userLoan) {
         this.userLoan = userLoan;
+    }
+    public void addLoan(Loan newLoan){
+        userLoan.add(newLoan);
     }
     
 }
