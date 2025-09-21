@@ -1,0 +1,4 @@
+1,Harry Potter y el caliz de fuego,JK Rowling,4
+2,The Twisted Ones, Scott Cawtton,2
+3,La vuelta al mundo en 80 días,Julio Verne,5
+4,Cien Años de Soledad, Gabriel Garcia Marquez,6
